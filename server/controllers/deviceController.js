@@ -34,7 +34,11 @@ class DeviceController {
     let where = {}
     if (brandId) where['brandId'] = brandId
     if (typeId) where['typeId'] = typeId
-    const devices = await Device.findAndCountAll({ where, limit, offset })
+    where['limit'] = limit
+    where['offset'] = offset
+
+    const devices = await Device.findAndCountAll(where)
+    // const devices = await Device.findAll({})
     res.json(devices)
   }
   async getOne(req, res) {

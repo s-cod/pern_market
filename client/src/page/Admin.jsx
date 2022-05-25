@@ -2,7 +2,7 @@ import { Button, Container, Row } from 'react-bootstrap'
 import CreateType from '../components/modals/CreateType'
 import CreateBrand from '../components/modals/CreateBrand'
 import CreateDevice from '../components/modals/CreateDevice'
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 const Admin = () => {
   const [brandVisible, setBrandVisible] = useState(false)
